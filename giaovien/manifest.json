@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "CheckAuto",
-    "description": "Điểm danh",
+    "name": "Giao Vien",
+    "description": "Giao Vien",
     "version": "1.0",
     "permissions": ["tabs", "*://*/*", "storage"],
     "content_scripts": [{
@@ -11,7 +11,7 @@
         "js": ["public/js/jquery.js" , "public/js/content.js"]
     }],
     "browser_action": {
-        "default_title": "CheckssAuto",
+        "default_title": "Giao Vien",
         "default_popup": "popup.html",
         "default_icon": "public/image/admin_profile.png"
     }

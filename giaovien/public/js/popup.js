@@ -1,5 +1,15 @@
 $(document).ready(function(){
-	$.get("http://localhost:80/nnnnn/login/checkgv.php",function(data){
-		$("#result").html(data);
-	});
+    $("#btnDiemDanh").click(function(){
+        $("#link").attr("href", "http://localhost:82/extension/php-training/autocheck.php")
+        chrome.tabs.getSelected(null, function (tab) {
+            var code = 'window.location.reload();';
+            chrome.tabs.executeScript(tab.id, { code });
+        });
+    })
+    $("#btnOpen").click(function(){
+        chrome.tabs.getSelected(null, function (tab) {
+            var newURL = 'http://localhost:82/extension/php-training/list.php';
+            chrome.tabs.create({url: newURL });
+        });
+    })
 });

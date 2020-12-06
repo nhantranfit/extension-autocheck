@@ -1,18 +1,45 @@
-var send = document.querySelector('#content__send');
-var notify = document.querySelector('.header__notify--success');
-send.onclick = function () {
-	getMSSV();
-}
-
-function getMSSV() {
-	var mssv = document.querySelector('.content__mssv-input').value;
-	$.get('http://localhost:80/nnnnn/login/checkhs.php', {mssv}, function (data) {
-		if(data == 1) {
-			$(notify).html("<div class='alert alert-failed'>Điểm danh không thành công!</div>")
-		}
-		else {
-			$(notify).html("<div class='alert alert-success'>Điểm danh thành công!</div>")
+$(document).ready(function(){
+	$('#send').click(function(){
+		var mssv = $('#mssv').val();
+		if(mssv == ''){
+			$("#thongbao").html(
+				`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<span>Không để trống</span>
+				</div>`
+			)
+		}	
+		else{
+			$.post("http://localhost:82/extension/php-training/checksv.php",{mssv},function (data) {
+				if(data == 0){
+					$("#thongbao").html(
+						`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<span>Sinh viên này đã điểm danh</span>
+						</div>`
+					)
+				}
+				else if(data == 1){
+					$("#thongbao").html(
+						`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<span>Không tìm thấy sinh viên</span>
+						</div>`
+					)
+				}
+				else if(data == 2){
+					$("#thongbao").html(
+						`<div class="alert alert-success alert-dismissible fade show" role="alert">
+						<span>Điểm danh thành công</span>
+						</div>`
+					)
+				}
+				else if(data == 3){
+					$("#thongbao").html(
+						`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<span>Điểm danh thất bại</span>
+						</div>`
+					)
+				}
+			})
+			$('#mssv').val('')
 		}
 	});
-	
-}
+})
