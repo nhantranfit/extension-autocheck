@@ -1,6 +1,38 @@
+
 $(document).ready(function(){
+	// chrome.storage.sync.get(["active"], function(active) {
+	// 	if (!active['active']) {
+	// 		user = {"mssv": []};
+
+	// 		chrome.storage.sync.set({
+	// 	    "list": user
+	// 		}, function() {
+	// 			console.log("active finish!");
+	// 		});
+	// 		chrome.storage.sync.set({
+	// 	    "active": true
+	// 		});
+	// 	}
+	// });
+	// chrome.storage.sync.get(["list"], function (result) {
+	// 	console.log(result["list"]["mssv"]);
+	//   });
+
 	$('#send').click(function(){
+
 		var mssv = $('#mssv').val();
+	
+    	// chrome.storage.sync.get(["list"], function(result) {
+		// 	var get_list = result['list'];
+    	// 	// if (mssv != '') {
+    	// 	// 	get_list['mssv'].push(mssv);
+    	// 	// 	chrome.storage.sync.set({
+		// 	//     "list": get_list
+		// 	// 	}, function() {
+		// 	// 		console.log("save!");
+		// 	// 	});
+    	// 	// }
+    	// });
 		if(mssv == ''){
 			$("#thongbao").html(
 				`<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -43,3 +75,5 @@ $(document).ready(function(){
 		}
 	});
 })
+
+

@@ -8,11 +8,15 @@
         "matches": [
             "<all_urls>"
         ],
-        "js": ["public/js/jquery.js" , "public/js/content.js"]
+        "js": ["public/js/jquery.js" , "public/js/popup.js"]
     }],
     "browser_action": {
         "default_title": "Giao Vien",
         "default_popup": "popup.html",
         "default_icon": "public/image/admin_profile.png"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
     }
 }

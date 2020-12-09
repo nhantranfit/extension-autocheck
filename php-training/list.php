@@ -96,6 +96,16 @@ else{
     <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/styles.css">
+    <!-- <script>
+    function winOpen(url){
+      return window.open(url,getWinName(url), 'width=1200px,height=800px,toolbar=yes,location=yes,menubar=yes');
+      console.log(getWinName(url))
+    }
+
+    function getWinName(url){
+      return "win" + url.replace(/[^A-Za-z0-9\-\_]*/g,"");
+    }
+    </script> -->
 </head>
 
 <body>
@@ -151,7 +161,7 @@ else{
                         <?php }?></th>
 
                         <th scope="col">Email</th>
-                        <th scope="col">Số tiết vắng</th>
+                        <!-- <th scope="col">Số tiết vắng</th> -->
                         <th scope="col">Detail</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -166,7 +176,7 @@ else{
                             <td><?php echo $arr['username']; ?></td>
                             <td><?php echo $arr['fullname']; ?></td>
                             <td><?php echo $arr['email']; ?></td>
-                            <td><input type="text" style="width: 40px" id="vang" value="<?php echo $arr['vang']?>"></td>
+                            <!-- <td><input type="text" style="width: 40px" id="vang" value="<?php echo $arr['vang']?>"></td> -->
                             <td>
                                 <form></form>
                                 <form action="userdetail.php" method="post">
@@ -242,13 +252,16 @@ else{
         <div class="back" style="text-align: center">
             <button type="button" class="btn btn-info" onClick="javascript:history.go(-1)">Back</button>
             <a href="admin.php" class="btn btn-info">Add User ++</a>
-            <a href="excel.php" class="btn btn-info">Export</a>
-            <form action="list.php" method="post">
-                <button type="submit" class="btn btn-info" name="reset">Reset</button>
-            </form>
+            <!-- <a href="excel.php" class="btn btn-info">Export</a> -->
           
-            
+            <!-- <form action="list.php" method="post"> -->
+                <!-- <button type="submit" class="btn btn-info" name="reset">Reset</button> -->
+            <!-- </form> -->
+            <!-- <a href="#" onclick="winOpen('list_diemdanh.php');" class="btn btn-info">Open</a> -->
+       
         </div>
     </div>
+    <script src="./public/js/jquery.js"></script>
+    <script src="./public/js/script.js"></script>
 </body>
 </html>
